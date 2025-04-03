@@ -1,0 +1,21 @@
+# <Event Source Name>
+
+<Event Source Description>
+
+## Behaviours
+
+- Bounded/Unbounded
+- Buffered/Unbuffered
+- Configurable Read Policy: Yes/No
+
+## Parameters
+
+<Describe any parameters this source takes>
+
+## Example Usage
+
+<Example Description>
+
+```java
+EventSource<T> source = new EventSource<T>()
+```

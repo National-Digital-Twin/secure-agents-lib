@@ -1,0 +1,29 @@
+# <Sink Name>
+
+<Sink Description>
+
+## Behaviours
+
+- Forwarding/Terminal
+- Transforming: Yes/No
+- Batching: Yes/No
+
+## Parameters
+
+<Describe any parameters this sink takes>
+
+## Example Usage
+
+<Example Description>
+
+```java
+try (SinkClass<T> sink 
+        = SinkClass.<T>create()
+                   .someBuilderMethod()
+                   .destination()
+                   .build()) {
+    for (T input : someDataSource()) {
+        sink.send(input);
+    }
+}
+```

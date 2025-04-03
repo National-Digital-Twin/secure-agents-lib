@@ -1,0 +1,811 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ SPDX-License-Identifier: Apache-2.0
+ Originally developed by Telicent Ltd.; subsequently adapted, enhanced, and maintained by the National Digital Twin Programme.
+
+    Copyright (c) Telicent Ltd.
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+
+    Modifications made by the National Digital Twin Programme (NDTP)
+    © Crown Copyright 2025. This work has been developed by the National Digital Twin Programme
+    and is legally attributed to the Department for Business and Trade (UK) as the governing entity.
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>uk.gov.dbt.ndtp.secure-agents</groupId>
+    <artifactId>parent</artifactId>
+    <version>0.90.0</version>
+    <modules>
+        <module>projectors-lib</module>
+        <module>projector-driver</module>
+        <module>cli</module>
+        <module>event-sources</module>
+        <module>jaxrs-base-server</module>
+        <module>event-sources/event-source-file</module>
+        <module>observability-lib</module>
+        <module>live-reporter</module>
+        <module>configurator</module>
+        <module>jwt-auth-common</module>
+    </modules>
+    <packaging>pom</packaging>
+    <name>IANode Secure Agents - Parent</name>
+    <description>Provides common libraries for building Java based Secure Agents for the IANode platform</description>
+    <url>https://github.com/National-Digital-Twin/secure-agents-lib</url>
+
+    <developers>
+        <developer>
+            <name>IANode Developers</name>
+            <email>NDTP@businessandtrade.gov.uk</email>
+            <organization>Department for Business and Trade</organization>
+            <organizationUrl>https://ndtp.co.uk</organizationUrl>
+        </developer>
+    </developers>
+
+    <licenses>
+        <license>
+            <name>Apache-2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+            <comments>A business-friendly OSS license</comments>
+        </license>
+    </licenses>
+
+    <scm>
+        <connection>scm:git:https://github.com/National-Digital-Twin/secure-agents-lib</connection>
+        <developerConnection>scm:git:ssh://git@github.com/National-Digital-Twin/secure-agents-lib</developerConnection>
+        <url>https://github.com/National-Digital-Twin/secure-agents-lib</url>
+        <tag>HEAD</tag>
+    </scm>
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>github</id>
+            <name>GitHub Packages</name>
+            <url>https://maven.pkg.github.com/National-Digital-Twin/secure-agents-lib</url>
+        </snapshotRepository>
+        <repository>
+            <id>github</id>
+            <name>GitHub Packages</name>
+            <url>https://maven.pkg.github.com/National-Digital-Twin/secure-agents-lib</url>
+        </repository>
+    </distributionManagement>
+    <properties>
+        <!--
+        Compiler Configuration
+        -->
+        <jdk.version>17</jdk.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <!-- Code Coverage Configuration -->
+        <!--
+        Controls the minimum code coverage ratio that modules which have opted into code coverage enforcement are
+        required to meet.  If a submodule wants to increase/decrease this value they can do so by redefining this
+        property in their pom.xml
+        -->
+        <coverage.minimum>0.8</coverage.minimum>
+
+        <!-- Javadoc Configuration -->
+        <javadoc.failOnWarnings>true</javadoc.failOnWarnings>
+
+        <!-- Dependency Analyze Configuration -->
+        <analyze.failOnWarnings>true</analyze.failOnWarnings>
+
+        <!-- Parallel Testing -->
+        <!--
+        Controls how many JVM forks are used for parallel testing in some modules, set to a conservative 2 which offers
+        decent reductions in test time but avoids overloading the developers machine especially when parallel tests are
+        spinning up containers
+        -->
+        <test.maxForks>2</test.maxForks>
+
+        <!-- Plugin Versions -->
+        <plugin.assembly>3.7.1</plugin.assembly>
+        <plugin.clean>3.4.1</plugin.clean>
+        <plugin.compiler>3.14.0</plugin.compiler>
+        <plugin.cyclonedx>2.9.1</plugin.cyclonedx>
+        <plugin.dependency>3.8.1</plugin.dependency>
+        <plugin.enforcer>3.5.0</plugin.enforcer>
+        <plugin.exec>3.5.0</plugin.exec>
+        <plugin.gpg>3.2.7</plugin.gpg>
+        <plugin.jacoco>0.8.12</plugin.jacoco>
+        <plugin.jar>3.4.2</plugin.jar>
+        <plugin.javadoc>3.11.2</plugin.javadoc>
+        <plugin.nexus>1.7.0</plugin.nexus>
+        <plugin.shade>3.2.4</plugin.shade>
+        <plugin.source>3.3.1</plugin.source>
+        <plugin.surefire>3.5.3</plugin.surefire>
+        <plugin.versions>2.18.0</plugin.versions>
+
+        <!-- Dependency Versions -->
+        <dependency.airline>3.0.0</dependency.airline>
+        <dependency.caffeine>3.2.0</dependency.caffeine>
+        <dependency.commons-collections>4.4</dependency.commons-collections>
+        <dependency.commons-io>2.18.0</dependency.commons-io>
+        <dependency.commons-lang>3.17.0</dependency.commons-lang>
+        <dependency.grizzly>4.0.2</dependency.grizzly>
+        <dependency.jackson>2.18.3</dependency.jackson>
+        <dependency.jakarta.annotation>3.0.0</dependency.jakarta.annotation>
+        <dependency.jakarta-inject>2.0.1.MR</dependency.jakarta-inject>
+        <dependency.jakarta.validation>3.1.1</dependency.jakarta.validation>
+        <dependency.jakarta.ws.rs>4.0.0</dependency.jakarta.ws.rs>
+        <dependency.jena>5.2.0</dependency.jena>
+        <dependency.jersey>3.1.10</dependency.jersey>
+        <dependency.jetbrains-annotations>26.0.2</dependency.jetbrains-annotations>
+        <dependency.jjwt>0.12.6</dependency.jjwt>
+        <dependency.jwt-auth>0.90.0</dependency.jwt-auth>
+        <dependency.kafka>4.0.0</dependency.kafka>
+        <dependency.logback>1.5.18</dependency.logback>
+        <dependency.lombok>1.18.36</dependency.lombok>
+        <dependency.mockito>5.16.1</dependency.mockito>
+        <dependency.opentelemetry.agent>2.14.0</dependency.opentelemetry.agent>
+        <dependency.opentelemetry.sdk>1.48.0</dependency.opentelemetry.sdk>
+        <dependency.opentelemetry.sdk-alpha>1.29.0-alpha</dependency.opentelemetry.sdk-alpha>
+        <dependency.rdf-abac>0.90.0</dependency.rdf-abac>
+        <dependency.resilience4j>2.3.0</dependency.resilience4j>
+        <dependency.servlet>6.1.0</dependency.servlet>
+        <dependency.slf4j>2.0.17</dependency.slf4j>
+        <dependency.slf4j-test>3.0.1</dependency.slf4j-test>
+        <dependency.testcontainers>1.20.6</dependency.testcontainers>
+        <dependency.testng>7.11.0</dependency.testng>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- Jena for RDF processing -->
+            <dependency>
+                <groupId>org.apache.jena</groupId>
+                <artifactId>jena-arq</artifactId>
+                <version>${dependency.jena}</version>
+                <exclusions>
+                    <!-- Excluded due to upstream issue with being in compile scope by mistake -->
+                    <exclusion>
+                        <groupId>org.junit.platform</groupId>
+                        <artifactId>junit-platform-suite-engine</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.jena</groupId>
+                <artifactId>jena-rdfpatch</artifactId>
+                <version>${dependency.jena}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.jena</groupId>
+                <artifactId>jena-base</artifactId>
+                <version>${dependency.jena}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.jena</groupId>
+                <artifactId>jena-core</artifactId>
+                <version>${dependency.jena}</version>
+            </dependency>
+
+            <!-- RDF ABAC -->
+            <dependency>
+                <groupId>uk.gov.dbt.ndtp.jena</groupId>
+                <artifactId>rdf-abac-lib</artifactId>
+                <version>${dependency.rdf-abac}</version>
+            </dependency>
+
+            <!-- Jackson for serialization to JSON/YAML etc -->
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-core</artifactId>
+                <version>${dependency.jackson}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>${dependency.jackson}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-annotations</artifactId>
+                <version>${dependency.jackson}</version>
+            </dependency>
+
+            <!-- TestNG and Mockito for testing -->
+            <dependency>
+                <groupId>org.testng</groupId>
+                <artifactId>testng</artifactId>
+                <version>${dependency.testng}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-core</artifactId>
+                <version>${dependency.mockito}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.testcontainers</groupId>
+                <artifactId>testcontainers</artifactId>
+                <version>${dependency.testcontainers}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.apache.commons</groupId>
+                        <artifactId>commons-compress</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>org.testcontainers</groupId>
+                <artifactId>kafka</artifactId>
+                <version>${dependency.testcontainers}</version>
+            </dependency>
+
+            <!--
+            SLF4J and a concrete implementation for Logging
+
+            Plus bring in a mock SLF4J harness that lets us test our logging output is as expected
+            -->
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>${dependency.slf4j}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>jul-to-slf4j</artifactId>
+                <version>${dependency.slf4j}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-classic</artifactId>
+                <version>${dependency.logback}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.github.valfirst</groupId>
+                <artifactId>slf4j-test</artifactId>
+                <version>${dependency.slf4j-test}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.github.ben-manes.caffeine</groupId>
+                <artifactId>caffeine</artifactId>
+                <version>${dependency.caffeine}</version>
+            </dependency>
+
+            <!-- Kafka for Event Sourcing -->
+            <dependency>
+                <groupId>org.apache.kafka</groupId>
+                <artifactId>kafka-clients</artifactId>
+                <version>${dependency.kafka}</version>
+            </dependency>
+
+            <!-- Apache Commons Libraries for Utilities -->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${dependency.commons-lang}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-collections4</artifactId>
+                <version>${dependency.commons-collections}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>${dependency.commons-io}</version>
+            </dependency>
+
+            <!-- Airline for CLIs -->
+            <dependency>
+                <groupId>com.github.rvesse</groupId>
+                <artifactId>airline</artifactId>
+                <version>${dependency.airline}</version>
+            </dependency>
+
+            <!-- JAX-RS related dependencies -->
+            <dependency>
+                <groupId>jakarta.servlet</groupId>
+                <artifactId>jakarta.servlet-api</artifactId>
+                <version>${dependency.servlet}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>jakarta.ws.rs</groupId>
+                <artifactId>jakarta.ws.rs-api</artifactId>
+                <version>${dependency.jakarta.ws.rs}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>jakarta.annotation</groupId>
+                <artifactId>jakarta.annotation-api</artifactId>
+                <version>${dependency.jakarta.annotation}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.glassfish.jersey.containers</groupId>
+                <artifactId>jersey-container-servlet-core</artifactId>
+                <version>${dependency.jersey}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.glassfish.jersey.media</groupId>
+                <artifactId>jersey-media-json-jackson</artifactId>
+                <version>${dependency.jersey}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.glassfish.jersey.inject</groupId>
+                <artifactId>jersey-hk2</artifactId>
+                <version>${dependency.jersey}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.glassfish.jersey.ext</groupId>
+                <artifactId>jersey-bean-validation</artifactId>
+                <version>${dependency.jersey}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.glassfish.jersey.core</groupId>
+                <artifactId>jersey-client</artifactId>
+                <version>${dependency.jersey}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.glassfish.jersey.core</groupId>
+                <artifactId>jersey-server</artifactId>
+                <version>${dependency.jersey}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.glassfish.jersey.containers</groupId>
+                <artifactId>jersey-container-grizzly2-http</artifactId>
+                <version>${dependency.jersey}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.glassfish.jersey.containers</groupId>
+                <artifactId>jersey-container-grizzly2-servlet</artifactId>
+                <version>${dependency.jersey}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.glassfish.grizzly</groupId>
+                <artifactId>grizzly-framework</artifactId>
+                <version>${dependency.grizzly}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.glassfish.grizzly</groupId>
+                <artifactId>grizzly-http-server</artifactId>
+                <version>${dependency.grizzly}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.glassfish.grizzly</groupId>
+                <artifactId>grizzly-http-servlet</artifactId>
+                <version>${dependency.grizzly}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.glassfish.grizzly</groupId>
+                <artifactId>grizzly-http</artifactId>
+                <version>${dependency.grizzly}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>jakarta.inject</groupId>
+                <artifactId>jakarta.inject-api</artifactId>
+                <version>${dependency.jakarta-inject}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>jakarta.validation</groupId>
+                <artifactId>jakarta.validation-api</artifactId>
+                <version>${dependency.jakarta.validation}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>uk.gov.dbt.ndtp.public</groupId>
+                <artifactId>jwt-servlet-auth-jaxrs3</artifactId>
+                <version>${dependency.jwt-auth}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>uk.gov.dbt.ndtp.public</groupId>
+                <artifactId>jwt-servlet-auth-aws</artifactId>
+                <version>${dependency.jwt-auth}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt-api</artifactId>
+                <version>${dependency.jjwt}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>uk.gov.dbt.ndtp.public</groupId>
+                <artifactId>jwt-servlet-auth-lib</artifactId>
+                <version>${dependency.jwt-auth}</version>
+            </dependency>
+
+            <!-- resilience4j -->
+            <dependency>
+                <groupId>io.github.resilience4j</groupId>
+                <artifactId>resilience4j-ratelimiter</artifactId>
+                <version>${dependency.resilience4j}</version>
+            </dependency>
+
+            <!-- Open Telemetry -->
+            <dependency>
+                <groupId>io.opentelemetry</groupId>
+                <artifactId>opentelemetry-sdk</artifactId>
+                <version>${dependency.opentelemetry.sdk}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.opentelemetry</groupId>
+                <artifactId>opentelemetry-api</artifactId>
+                <version>${dependency.opentelemetry.sdk}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.opentelemetry.semconv</groupId>
+                <artifactId>opentelemetry-semconv</artifactId>
+                <version>${dependency.opentelemetry.sdk-alpha}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.opentelemetry.javaagent</groupId>
+                <artifactId>opentelemetry-javaagent</artifactId>
+                <version>${dependency.opentelemetry.agent}</version>
+            </dependency>
+
+            <!-- Lombok -->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${dependency.lombok}</version>
+            </dependency>
+        </dependencies>
+
+    </dependencyManagement>
+
+    <build>
+
+        <plugins>
+            <!-- Enforcer Plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-enforcer-plugin</artifactId>
+                <version>${plugin.enforcer}</version>
+                <executions>
+                    <execution>
+                        <id>enforce-versions</id>
+                        <goals>
+                            <goal>enforce</goal>
+                        </goals>
+                        <configuration>
+                            <rules>
+                                <requireMavenVersion>
+                                    <version>3.8.1</version>
+                                </requireMavenVersion>
+                                <requireJavaVersion>
+                                    <version>17,</version>
+                                </requireJavaVersion>
+                            </rules>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>buildnumber-maven-plugin</artifactId>
+                <version>3.2.1</version>
+                <executions>
+                    <execution>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>create-metadata</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <doCheck>true</doCheck>
+                    <doUpdate>true</doUpdate>
+                    <outputName>${project.artifactId}.version</outputName>
+                    <addOutputDirectoryToResources>true</addOutputDirectoryToResources>
+                    <timestampFormat>yyyy-MM-dd HH:mm:ss</timestampFormat>
+                    <properties>
+                        <artifactId>${project.artifactId}</artifactId>
+                        <groupId>${project.groupId}</groupId>
+                        <buildEnv>${os.name} ${os.version} (${os.arch})</buildEnv>
+                    </properties>
+                </configuration>
+            </plugin>
+
+            <!-- Compiler Plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${plugin.compiler}</version>
+                <configuration>
+                    <source>${jdk.version}</source>
+                    <target>${jdk.version}</target>
+                    <release>${jdk.version}</release>
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                            <version>${dependency.lombok}</version>
+                        </path>
+                    </annotationProcessorPaths>
+                </configuration>
+            </plugin>
+
+            <!-- JAR Plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>${plugin.jar}</version>
+                <executions>
+                    <execution>
+                        <id>create-test-jar</id>
+                        <goals>
+                            <goal>test-jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- Source Plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>${plugin.source}</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>jar</goal>
+                            <goal>test-jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- Javadoc Plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>${plugin.javadoc}</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <javadocVersion>${java.version}</javadocVersion>
+                    <quiet>true</quiet>
+                    <encoding>UTF-8</encoding>
+                    <charset>UTF-8</charset>
+                    <docencoding>UTF-8</docencoding>
+                    <failOnWarnings>${javadoc.failOnWarnings}</failOnWarnings>
+                    <additionalJOptions>
+                        <additionalJOption>-Xdoclint:-missing</additionalJOption>
+                    </additionalJOptions>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.cyclonedx</groupId>
+                <artifactId>cyclonedx-maven-plugin</artifactId>
+                <version>${plugin.cyclonedx}</version>
+                <executions>
+                    <execution>
+                        <id>build-sbom-cyclonedx</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>makeAggregateBom</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <outputName>${project.artifactId}-${project.version}-bom</outputName>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>${plugin.gpg}</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                        <phase>verify</phase>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-dependency-plugin</artifactId>
+                    <version>${plugin.dependency}</version>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>go-offline</goal>
+                            </goals>
+                            <configuration>
+                                <!--
+                                When going offline don't try to resolve internal project dependencies.  This is
+                                primarily only a problem when the version gets bumped.  However, in a CI/CD environment
+                                this is always needed.
+                                -->
+                                <excludeGroupIds>uk.gov.dbt.ndtp.secure-agents</excludeGroupIds>
+                            </configuration>
+                        </execution>
+                        <execution>
+                            <id>analyze</id>
+                            <goals>
+                                <goal>analyze-only</goal>
+                            </goals>
+                            <configuration>
+                                <failOnWarning>${analyze.failOnWarnings}</failOnWarning>
+                                <ignoredNonTestScopedDependencies>
+                                    <ignoredNonTestScopedDependency>org.glassfish.grizzly:grizzly-http</ignoredNonTestScopedDependency>
+                                    <ignoredNonTestScopedDependency>jakarta.ws.rs:jakarta.ws.rs-api</ignoredNonTestScopedDependency>
+                                </ignoredNonTestScopedDependencies>
+                                <ignoredUnusedDeclaredDependencies>
+                                    <ignoredUnusedDeclaredDependency>org.glassfish.jersey.inject:jersey-hk2</ignoredUnusedDeclaredDependency>
+                                    <ignoredUnusedDeclaredDependency>org.glassfish.jersey.media:jersey-media-json-jackson</ignoredUnusedDeclaredDependency>
+                                    <ignoredUnusedDeclaredDependency>io.opentelemetry:opentelemetry-sdk</ignoredUnusedDeclaredDependency>
+                                    <ignoredUnusedDeclaredDependency>org.testcontainers:kafka</ignoredUnusedDeclaredDependency>
+                                    <ignoredUnusedDeclaredDependency>org.slf4j:jul-to-slf4j</ignoredUnusedDeclaredDependency>
+                                    <ignoredUnusedDeclaredDependency>uk.gov.dbt.ndtp.secure-agents:event-source-kafka</ignoredUnusedDeclaredDependency>
+                                    <ignoredUnusedDeclaredDependency>io.opentelemetry.javaagent:opentelemetry-javaagent</ignoredUnusedDeclaredDependency>
+                                </ignoredUnusedDeclaredDependencies>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
+
+                <!-- Code Coverage Plugins -->
+                <plugin>
+                    <groupId>org.jacoco</groupId>
+                    <artifactId>jacoco-maven-plugin</artifactId>
+                    <version>${plugin.jacoco}</version>
+                    <executions>
+                        <execution>
+                            <id>prepare-agent</id>
+                            <phase>process-test-classes</phase>
+                            <goals>
+                                <goal>prepare-agent</goal>
+                            </goals>
+                            <configuration>
+                                <!--
+                                Needs to be true so that if a module invokes Maven surefire/failsafe multiple times,
+                                e.g. with different configurations, the coverage from all those runs is combined
+                                -->
+                                <append>true</append>
+                            </configuration>
+                        </execution>
+                        <execution>
+                            <id>report</id>
+                            <phase>package</phase>
+                            <goals>
+                                <goal>report</goal>
+                            </goals>
+                        </execution>
+                        <execution>
+                            <id>require-test-coverage</id>
+                            <phase>package</phase>
+                            <goals>
+                                <goal>check</goal>
+                            </goals>
+                            <configuration>
+                                <skip>${skipTests}</skip>
+                                <rules>
+                                    <rule>
+                                        <element>BUNDLE</element>
+                                        <limits>
+                                            <limit>
+                                                <counter>CLASS</counter>
+                                                <value>COVEREDRATIO</value>
+                                                <minimum>${coverage.minimum}</minimum>
+                                            </limit>
+                                            <limit>
+                                                <counter>INSTRUCTION</counter>
+                                                <value>COVEREDRATIO</value>
+                                                <minimum>${coverage.minimum}</minimum>
+                                            </limit>
+                                            <limit>
+                                                <counter>METHOD</counter>
+                                                <value>COVEREDRATIO</value>
+                                                <minimum>${coverage.minimum}</minimum>
+                                            </limit>
+                                            <limit>
+                                                <counter>BRANCH</counter>
+                                                <value>COVEREDRATIO</value>
+                                                <minimum>${coverage.minimum}</minimum>
+                                            </limit>
+                                            <limit>
+                                                <counter>LINE</counter>
+                                                <value>COVEREDRATIO</value>
+                                                <minimum>${coverage.minimum}</minimum>
+                                            </limit>
+                                            <limit>
+                                                <counter>COMPLEXITY</counter>
+                                                <value>COVEREDRATIO</value>
+                                                <minimum>${coverage.minimum}</minimum>
+                                            </limit>
+                                        </limits>
+                                    </rule>
+                                </rules>
+                                <haltOnFailure>true</haltOnFailure>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>versions-maven-plugin</artifactId>
+                    <version>${plugin.versions}</version>
+                    <configuration>
+                        <ignoredVersions>.*[-\.]M.*,.*-alpha.*,.*-beta.*,.*-RC.*,.*rc.*</ignoredVersions>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+    <repositories>
+        <repository>
+            <id>github</id>
+            <url>https://maven.pkg.github.com/National-Digital-Twin/*</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+        <!-- Needed for Apache Jena SNAPSHOTs -->
+        <repository>
+            <id>apache-snapshots</id>
+            <url>https://repository.apache.org/content/repositories/snapshots/</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
+</project>

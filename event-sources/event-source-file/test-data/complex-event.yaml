@@ -1,0 +1,15 @@
+---
+headers:
+- key: "Content-Type"
+  value: "application/n-quads"
+- key: "Security-Label"
+  value: "clearance=TS"
+key: "eyJrZXkiOiJLZXkiLCJ2YWx1ZSI6IlZhbHVlIn0="
+value: "eyJhIjoxLCJiIjoyLCJjIjozLCJkIjpbNCw1LDZdLCJlIjp7ImYiOjcsImciOmZhbHNlfX0="
+extra-value: value
+extra-object:
+  foo: bar
+extra-list:
+  - a
+  - b
+  - c
