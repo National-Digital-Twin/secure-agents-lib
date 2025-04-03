@@ -1,0 +1,5 @@
+Content-Type: application/n-quads
+Security-Label: clearance=TS
+
+<http://other> <http://predicate> "value" .
+<http://subject> <http://predicate> <http://object> .

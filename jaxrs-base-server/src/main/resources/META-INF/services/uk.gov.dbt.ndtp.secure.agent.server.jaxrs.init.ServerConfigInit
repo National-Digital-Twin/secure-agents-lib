@@ -1,0 +1,5 @@
+# Runtime Information
+uk.gov.dbt.ndtp.secure.agent.server.jaxrs.init.ServerRuntimeInfo
+# Authentication and ABAC
+uk.gov.dbt.ndtp.secure.agent.server.jaxrs.init.JwtAuthInitializer
+uk.gov.dbt.ndtp.secure.agent.server.jaxrs.init.UserAttributesInitializer

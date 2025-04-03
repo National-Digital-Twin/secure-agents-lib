@@ -1,0 +1,4 @@
+Content-Type: foo/bar
+
+<http://other> <http://predicate> "value" .
+<http://subject> <http://predicate> <http://object> .

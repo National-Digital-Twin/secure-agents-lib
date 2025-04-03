@@ -1,0 +1,9 @@
+*.key
+*.crt
+*.csr
+*.txt
+*.srl
+*.old
+*.attr
+client.properties
+credentials

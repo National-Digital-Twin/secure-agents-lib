@@ -1,0 +1,16 @@
+{
+  "name": "kafka-sink-connector",
+  "config": {
+    "connector.class": "org.apache.kafka.connect.transforms.Transformation",
+    "tasks.max": "1",
+    "topics": "input-topic",    // The source topic
+    "producer.bootstrap.servers": "localhost:9092", // Kafka broker's address
+    "producer.key.serializer": "org.apache.kafka.common.serialization.StringSerializer",
+    "producer.value.serializer": "org.apache.kafka.common.serialization.StringSerializer",
+    "transforms": "CopyField",  // Optional transformation, if needed
+    "transforms.CopyField.type": "org.apache.kafka.connect.transforms.ReplaceField$Value",
+    "transforms.CopyField.blacklist": "field_to_exclude", // Optional field to exclude from the transformation
+    "producer.value.serializer": "org.apache.kafka.common.serialization.StringSerializer",
+    "output.topic": "output-topic" // The target topic
+  }
+}

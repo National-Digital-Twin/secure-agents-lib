@@ -1,0 +1,53 @@
+version: '3'
+services:
+  kafka:
+    image: confluentinc/cp-kafka:latest
+    environment:
+      - KAFKA_LISTENER_SECURITY_PROTOCOL=PLAINTEXT
+      - KAFKA_LISTENER_NAME_CONTROLLER=PLAINTEXT
+      - KAFKA_LISTENER_NAME_BROKER=PLAINTEXT
+      - KAFKA_LISTENERS=PLAINTEXT://0.0.0.0:9092
+      - KAFKA_LISTENER_NAME_CONTROLLER=PLAINTEXT://0.0.0.0:9093
+      - KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://localhost:9092
+      - KAFKA_LISTENER_SECURITY_PROTOCOL=PLAINTEXT
+      - KAFKA_LISTENER_NAME_CONTROLLER=PLAINTEXT
+      - KAFKA_LISTENER_NAME_BROKER=PLAINTEXT
+      - KAFKA_LISTENERS=PLAINTEXT://0.0.0.0:9092
+      - KAFKA_LOG_DIRS=/var/lib/kafka/data
+      - KAFKA_LOG_RETENTION_HOURS=168
+      - KAFKA_LISTENER_SECURITY_PROTOCOL=PLAINTEXT
+      - KAFKA_ZOOKEEPER_CONNECT=
+      - KAFKA_KRAFT_MODE=true
+      - KAFKA_PROCESS_ROLES=broker,controller
+      - KAFKA_NODE_ID=1
+      - KAFKA_KAFKA_CLUSTER_ID=kafka-cluster-1
+      - KAFKA_CONTROLLER_QUORUM_VOTERS=1@localhost:9093
+    volumes:
+      - /tmp/kafka-logs:/var/lib/kafka/data
+    ports:
+      - "9092:9092"
+      - "9093:9093"
+    networks:
+      - kafka-network
+
+  kafka-connect:
+    image: confluentinc/cp-kafka-connect:latest
+    environment:
+      - CONNECT_BOOTSTRAP_SERVERS=kafka:9092
+      - CONNECT_REST_PORT=8083
+      - CONNECT_GROUP_ID="connect-cluster"
+      - CONNECT_CONFIG_STORAGE_TOPIC="connect-configs"
+      - CONNECT_OFFSET_STORAGE_TOPIC="connect-offsets"
+      - CONNECT_STATUS_STORAGE_TOPIC="connect-statuses"
+      - CONNECT_KEY_CONVERTER="org.apache.kafka.connect.json.JsonConverter"
+      - CONNECT_VALUE_CONVERTER="org.apache.kafka.connect.json.JsonConverter"
+      - CONNECT_INTERNAL_KEY_CONVERTER="org.apache.kafka.connect.json.JsonConverter"
+      - CONNECT_INTERNAL_VALUE_CONVERTER="org.apache.kafka.connect.json.JsonConverter"
+    ports:
+      - "8083:8083"
+    networks:
+      - kafka-network
+
+networks:
+  kafka-network:
+    driver: bridge

@@ -1,0 +1,8 @@
+---
+headers:
+- key: "Content-Type"
+  value: "application/n-quads"
+- key: "Security-Label"
+  value: "clearance=TS"
+key: "B1vNFQ=="
+value: "PGh0dHA6Ly9zdWJqZWN0PiA8aHR0cDovL3ByZWRpY2F0ZT4gPGh0dHA6Ly9vYmplY3Q+IC4KPGh0dHA6Ly9vdGhlcj4gPGh0dHA6Ly9wcmVkaWNhdGU+ICJ2YWx1ZSIgLgo="

@@ -1,0 +1,6 @@
+Content-Type: application/trig
+
+@prefix : <http://example.org/> .
+
+:subject  :predicate  :object ;
+        :value      "a" .

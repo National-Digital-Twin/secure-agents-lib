@@ -1,0 +1,41 @@
+# Maven and Build Artifacts
+target/
+lib/
+agents/
+pom.xml.*
+release.properties
+
+# IntelliJ
+.idea/
+*.iml
+*.iws
+
+# Eclipse
+.classpath
+.project
+.settings/
+.recommenders
+.metadata
+maven-eclipse.xml
+.externalToolBuilders/
+
+# VSCode
+.vscode/
+
+# Temporary Generated SSL Certificates
+*.pem
+*-keystore*
+*-truststore*
+certs/
+
+# OS X
+.DS_Store
+
+# Other random *nix artifacts
+hs_err_*
+*~
+.#*
+\#*
+
+# Trivy Cache
+.trivy/
