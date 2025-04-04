@@ -10,8 +10,7 @@ by Telicent.
 This product is now maintained and further developed as Secure Agents Lib
 by the National Digital Twin Programme.
 
-Copyright (C) 2022-2024 Telicent Ltd
-
+Copyright (C) 2022-2024 Telicent Ltd    
 © Crown Copyright 2025. This work has been developed by the National Digital Twin Programme and is legally attributed to the Department for Business and Trade (UK) as the governing entity.
 
 ## License
