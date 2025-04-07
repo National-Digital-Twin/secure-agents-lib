@@ -1,4 +1,7 @@
 # IA Node Live Reporting
+**Repository:** `secure-agents-lib`  
+**Description:** `IA Node Live Reporting module supplies APIs that allow for status and error reporting`
+<!-- SPDX-License-Identifier: OGL-UK-3.0 -->
 
 The [`live-reporter`](#dependency) module supplies APIs that allow for status and error reporting so that applications
 based upon these libraries can be monitored and visualised in our IA Node Live application.
@@ -207,3 +210,8 @@ Where `VERSION` is the desired version, see the top level [README](../../README.
 information.
 
 [1]: https://github.com/IANode-ndtp/dbt/gov/uk-architecture/blob/status-reporting/IANodePlatform/IANode-Status-Reporting.md
+
+© Crown Copyright 2025. This work has been developed by the National Digital Twin Programme and is legally attributed to the Department for Business and Trade (UK) as the
+governing entity.
+
+Licensed under the Open Government Licence v3.0.

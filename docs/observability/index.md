@@ -1,4 +1,7 @@
 # Observability Lib
+**Repository:** `secure-agents-lib`  
+**Description:** `The Observability Lib module provides helper utilities`
+<!-- SPDX-License-Identifier: OGL-UK-3.0 -->
 
 The Observability Lib module provides helper utilities around using [Open Telemetry][OTEL] to add metrics and traces to your
 applications.  It is also used by many of our other modules to help in creating and tracking their own metrics.
@@ -200,3 +203,8 @@ scoped dependencies:
 [3]: https://opentelemetry.io/docs/instrumentation/java/automatic/
 [4]: https://opentelemetry.io/docs/instrumentation/java/automatic/agent-config/
 [5]: https://github.com/open-telemetry/opentelemetry-specification/blob/main/specification/sdk-environment-variables.md
+
+© Crown Copyright 2025. This work has been developed by the National Digital Twin Programme and is legally attributed to the Department for Business and Trade (UK) as the
+governing entity.
+
+Licensed under the Open Government Licence v3.0.

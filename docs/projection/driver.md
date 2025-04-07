@@ -1,4 +1,7 @@
 # Projector Driver
+**Repository:** `secure-agents-lib`  
+**Description:** `Projector Driver`
+<!-- SPDX-License-Identifier: OGL-UK-3.0 -->
 
 The `ProjectorDriver` provides automation of a Secure Agents Projection pipeline. It takes in an
 [`EventSource`](../event-sources/index.md), a `Projector` and a [`Sink`](../sinks/index.md) and automates the polling of
@@ -111,3 +114,8 @@ Additionally, it exports the following driver specific metrics:
 - `messaging.stalls.consecutive` - A gauge indicating how many consecutive times the projection has stalled.  This may
   go up and down depending on how caught up the driver is with the event source, and how frequently new data arrives
   from the event source.
+
+© Crown Copyright 2025. This work has been developed by the National Digital Twin Programme and is legally attributed to the Department for Business and Trade (UK) as the
+governing entity.
+
+Licensed under the Open Government Licence v3.0.

@@ -1,4 +1,7 @@
 # Projectors
+**Repository:** `secure-agents-lib`  
+**Description:** `Projectors`
+<!-- SPDX-License-Identifier: OGL-UK-3.0 -->
 
 A `Projector` implements a data projection, it takes in an input and produces zero or more outputs to a provided `Sink`.
 Projectors implement the main logic of a projection, for example selection of entities of interest, using sinks to
@@ -89,3 +92,8 @@ input directly to the output sink as-is. The `entity-collector` module provides 
 md) which is the only other concrete implementation currently.
 
 The `projector-driver` module provides the [`ProjectorDriver`](driver.md) which has its own dedicated documentation.
+
+© Crown Copyright 2025. This work has been developed by the National Digital Twin Programme and is legally attributed to the Department for Business and Trade (UK) as the
+governing entity.
+
+Licensed under the Open Government Licence v3.0.

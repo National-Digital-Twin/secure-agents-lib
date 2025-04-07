@@ -1,4 +1,8 @@
 # JAX-RS Base Server
+**Repository:** `secure-agents-lib`  
+**Description:** `The JAX-RS Base Server module provides a bunch of utility code for quickly building new JAX-RS servers`
+<!-- SPDX-License-Identifier: OGL-UK-3.0 -->
+
 The JAX-RS Base Server module provides a bunch of utility code for quickly building new JAX-RS servers.  It provides a
 lot of building blocks around the following:
 
@@ -407,3 +411,8 @@ configuration details.
 [3]: https://github.com/National-Digital-Twin/jwt-servlet-auth#verifiers
 [4]: https://developer.mozilla.org/en-US/docs/Glossary/CORS-safelisted_request_header
 [5]: https://developer.mozilla.org/en-US/docs/Glossary/CORS-safelisted_response_header
+
+© Crown Copyright 2025. This work has been developed by the National Digital Twin Programme and is legally attributed to the Department for Business and Trade (UK) as the
+governing entity.
+
+Licensed under the Open Government Licence v3.0.
