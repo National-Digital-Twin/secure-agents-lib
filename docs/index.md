@@ -1,5 +1,7 @@
 # Secure Agents Lib - Overview
-## Provides an overview of the Secure Agents Library including concept, components, and building pipelines.
+**Repository:** `secure-agents-lib`  
+**Description:** `Provides an overview of the Secure Agents Library including concept, components, and building pipelines.`
+<!-- SPDX-License-Identifier: OGL-UK-3.0 -->
 
 # Overview
 This document provides an overview of the core concepts and components within these libraries and provides links to
@@ -127,3 +129,8 @@ Every piece of the pipeline uses functionality, or interfaces, from these core l
 You can find more detailed documentation on this pipeline in [that repository][1].
 
 [1]: https://github.com/National-Digital-Twin/secure-agent-knowledge-search
+
+© Crown Copyright 2025. This work has been developed by the National Digital Twin Programme and is legally attributed to the Department for Business and Trade (UK) as the
+governing entity.
+
+Licensed under the Open Government Licence v3.0.

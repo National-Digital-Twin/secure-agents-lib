@@ -1,5 +1,7 @@
 # Design Overview
-## Outlines the use case, design requirements, and related work associated with the secure agent libraries.
+**Repository:** `secure-agents-lib`  
+**Description:** `Outlines the use case, design requirements, and related work associated with the secure agent libraries`
+<!-- SPDX-License-Identifier: OGL-UK-3.0 -->
 
 # Use Case
 The secure-agent use case is relatively simple. A secure-agent reads events from an event source, converts those events
@@ -123,3 +125,8 @@ Also, there is the key design assumption of Integration Architecture Node  to co
 [2]: https://kafka.apache.org/documentation/streams/
 
 [3]: https://hazelcast.com/glossary/directed-acyclic-graph/
+
+© Crown Copyright 2025. This work has been developed by the National Digital Twin Programme and is legally attributed to the Department for Business and Trade (UK) as the
+governing entity.
+
+Licensed under the Open Government Licence v3.0.
