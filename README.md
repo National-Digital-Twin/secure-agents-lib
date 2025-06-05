@@ -74,9 +74,6 @@ library modules provided and then using their APIs for your own Secure Agents de
 
 ## Testing Guide
 
-### Introduction
-This guide aims to detail how to run tests on the various NDTP repositories. These repositories include Java, Python, JavaScript and more so different testing methods are detailed throughout. This document will cover running **unit tests, integration tests and smoke tests**.
-
 ### Unit Tests
 Unit testing is a software testing method where individual components or modules of an application are tested in isolation to verify their correctness. These components are often the smallest testable parts of the application, such as functions/methods, or class functions.
 
@@ -90,9 +87,9 @@ To perform unit tests, we use SonarQube. This platform allows us to see coverage
 > [!NOTE]
 > The **SONAR_ES_BOOTSTRAP_CHECKS_DISABLE=true** environment flag. This is to bypass Elasticsearch bootstrap checks as they, are not necessary for a local setup and can sometimes cause issues during setup.
 
-2. Go to your web browser and navigate to http://localhost:9000. This will bring up the login portal for SonarQube. When logging in for the first time use admin for both the username and password. It will ask you to set a new password for which you can choose anything of preference. 
-  > [!NOTE]  
-                                                                                                                                                                                                                                                                                           > If you get an **Unexpected application error**, refresh the page (it seems to be to do with an overlay not rendering properly).
+2. Go to your web browser and navigate to http://localhost:9000. This will bring up the login portal for SonarQube. When logging in for the first time use admin for both the username and password. It will ask you to set a new password for which you can choose anything of preference.
+> [!NOTE]  
+> If you get an **Unexpected application error**, refresh the page (it seems to be to do with an overlay not rendering properly).
 
 3. Select **Create a local project** and give it a name (this should ideally be the exact same name as the repository).
 
@@ -102,15 +99,12 @@ To perform unit tests, we use SonarQube. This platform allows us to see coverage
 
 6. You will be prompted to generate a project token or to use an existing token. For the first time setup select **Generate a project token**, The **Expires in** dropdown will default to 30 days, and then click the **Generate** button.
 
-7. On the next page, click **Continue** and then under the **Run analysis on your project** section, select the option that best describes your project.
+7. On the next page, click Continue and then under the Run analysis on your project section, select the option that says "Maven".
 
-> [!NOTE]
-> If your project is a Java project, select Maven. If you are unsure whether or not your project is a Java project that will work with the **Maven** method described here, check your root folder for a file called **pom.xml**. If it exists then this method will work.
+8. On selecting, the option that best describes your project, follow the steps shown to run a SonarQube analysis (the command provided must be run at the root of the project folder).
 
 > [!WARNING]
 > If you get an error while running this command, then check that your Java version matches the expected Java version of the repository. The error message should inform you which version is expected.
-
-8. On selecting, the option that best describes your project, follow the steps shown to run a SonarQube analysis (the command provided must be run at the root of the project folder). 
 
 ## API Documentation
 Documentation detailing the relevant configuration and endpoints is provided [here](./docs/cli/index.md ).
