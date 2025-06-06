@@ -72,6 +72,11 @@ Usage of this repository is primarily by declaring dependencies on one/more of t
 library modules provided and then using their APIs for your own Secure Agents development.  Please see the
 [Documentation](docs/index.md) for introductions to the various libraries and APIs provided.
 
+## Testing Guide
+
+### Running Unit Tests
+Navigate to the root of the project and run `mvn test` to run the tests for the repository.
+
 ## API Documentation
 Documentation detailing the relevant configuration and endpoints is provided [here](./docs/cli/index.md ).
 
