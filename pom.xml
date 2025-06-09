@@ -113,14 +113,14 @@
 
         <!-- Plugin Versions -->
         <plugin.assembly>3.7.1</plugin.assembly>
-        <plugin.clean>3.4.1</plugin.clean>
+        <plugin.clean>3.5.0</plugin.clean>
         <plugin.compiler>3.14.0</plugin.compiler>
         <plugin.cyclonedx>2.9.1</plugin.cyclonedx>
         <plugin.dependency>3.8.1</plugin.dependency>
         <plugin.enforcer>3.5.0</plugin.enforcer>
-        <plugin.exec>3.5.0</plugin.exec>
+        <plugin.exec>3.5.1</plugin.exec>
         <plugin.gpg>3.2.7</plugin.gpg>
-        <plugin.jacoco>0.8.12</plugin.jacoco>
+        <plugin.jacoco>0.8.13</plugin.jacoco>
         <plugin.jar>3.4.2</plugin.jar>
         <plugin.javadoc>3.11.2</plugin.javadoc>
         <plugin.nexus>1.7.0</plugin.nexus>
@@ -131,34 +131,34 @@
 
         <!-- Dependency Versions -->
         <dependency.airline>3.0.0</dependency.airline>
-        <dependency.caffeine>3.2.0</dependency.caffeine>
-        <dependency.commons-collections>4.4</dependency.commons-collections>
-        <dependency.commons-io>2.18.0</dependency.commons-io>
+        <dependency.caffeine>3.2.1</dependency.caffeine>
+        <dependency.commons-collections>4.5.0</dependency.commons-collections>
+        <dependency.commons-io>2.19.0</dependency.commons-io>
         <dependency.commons-lang>3.17.0</dependency.commons-lang>
         <dependency.grizzly>4.0.2</dependency.grizzly>
-        <dependency.jackson>2.18.3</dependency.jackson>
+        <dependency.jackson>2.19.0</dependency.jackson>
         <dependency.jakarta.annotation>3.0.0</dependency.jakarta.annotation>
         <dependency.jakarta-inject>2.0.1.MR</dependency.jakarta-inject>
         <dependency.jakarta.validation>3.1.1</dependency.jakarta.validation>
         <dependency.jakarta.ws.rs>4.0.0</dependency.jakarta.ws.rs>
-        <dependency.jena>5.2.0</dependency.jena>
+        <dependency.jena>5.4.0</dependency.jena>
         <dependency.jersey>3.1.10</dependency.jersey>
         <dependency.jetbrains-annotations>26.0.2</dependency.jetbrains-annotations>
         <dependency.jjwt>0.12.6</dependency.jjwt>
         <dependency.jwt-auth>0.90.0</dependency.jwt-auth>
         <dependency.kafka>4.0.0</dependency.kafka>
         <dependency.logback>1.5.18</dependency.logback>
-        <dependency.lombok>1.18.36</dependency.lombok>
-        <dependency.mockito>5.16.1</dependency.mockito>
-        <dependency.opentelemetry.agent>2.14.0</dependency.opentelemetry.agent>
-        <dependency.opentelemetry.sdk>1.48.0</dependency.opentelemetry.sdk>
-        <dependency.opentelemetry.sdk-alpha>1.29.0-alpha</dependency.opentelemetry.sdk-alpha>
+        <dependency.lombok>1.18.38</dependency.lombok>
+        <dependency.mockito>5.18.0</dependency.mockito>
+        <dependency.opentelemetry.agent>2.16.0</dependency.opentelemetry.agent>
+        <dependency.opentelemetry.sdk>1.51.0</dependency.opentelemetry.sdk>
+        <dependency.opentelemetry.sdk-alpha>1.32.0</dependency.opentelemetry.sdk-alpha>
         <dependency.rdf-abac>0.90.0</dependency.rdf-abac>
         <dependency.resilience4j>2.3.0</dependency.resilience4j>
         <dependency.servlet>6.1.0</dependency.servlet>
         <dependency.slf4j>2.0.17</dependency.slf4j>
         <dependency.slf4j-test>3.0.1</dependency.slf4j-test>
-        <dependency.testcontainers>1.20.6</dependency.testcontainers>
+        <dependency.testcontainers>1.21.1</dependency.testcontainers>
         <dependency.testng>7.11.0</dependency.testng>
     </properties>
 
