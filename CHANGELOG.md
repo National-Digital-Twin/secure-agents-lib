@@ -23,7 +23,7 @@ This project follows **Semantic Versioning (SemVer)** ([semver.org](https://semv
 - Placeholder for upcoming features and enhancements.
 
 ### Fixed
-- Placeholder for bug fixes and security updates.
+- Updated stated Java version in [README.md](/README.md) doc to reflect actual used version.
 
 ### Changed
 - Placeholder for changes to existing functionality.
