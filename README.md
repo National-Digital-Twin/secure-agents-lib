@@ -15,14 +15,14 @@ For a complete overview of the Integration Architecture (IA) project, please see
 ## Prerequisites
 Before using this repository, ensure you have the following dependencies installed:
 - **Required Tooling:**
-    - Java 21
+    - Java 17
     - Github PAT token set to allow retrieval of maven packages from Github Packages
     - Docker (if running via docker)
 - **Pipeline Requirements:**
     - Cloud platform credentials
 - **Supported Kubernetes Versions:** N/A
 - **System Requirements:**
-    - Java 21
+    - Java 17
     - Docker
     - Kafka (or connectivity to) - if applicable
 
