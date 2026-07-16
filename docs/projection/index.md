@@ -70,7 +70,7 @@ Where `VERSION` is the desired version, see the top level [README](../../README.
 information. This module also provides the [`Sink` API](../sinks/index.md).
 
 You will also find additional implementations of this interface in other modules such as the [Entity Collection
-API](https://github.com/National-Digital-Twin/secure-agent-search/blob/main/docs/entity-collector/index.md) which will require
+API](https://github.com/National-Node-Net/secure-agent-search/blob/main/docs/entity-collector/index.md) which will require
 dependencies on those modules.
 
 `ProjectorDriver` is provided by a separate `projector-driver` module which can be depended on from Maven like so:
@@ -88,7 +88,7 @@ dependencies on those modules.
 
 The `projectors-lib` only provides a single implementation, the `NoOpProjector`. This implementation simply passes the
 input directly to the output sink as-is. The `entity-collector` module provides the
-[`EntityCentricProjector`](https://github.com/National-Digital-Twin/secure-agent-search/blob/main/docs/entity-collector/projector.
+[`EntityCentricProjector`](https://github.com/National-Node-Net/secure-agent-search/blob/main/docs/entity-collector/projector.
 md) which is the only other concrete implementation currently.
 
 The `projector-driver` module provides the [`ProjectorDriver`](driver.md) which has its own dedicated documentation.

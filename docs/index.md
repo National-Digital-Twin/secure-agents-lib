@@ -8,7 +8,7 @@ This document provides an overview of the core concepts and components within th
 more detailed documentation on each area. If you'd like to understand more about the [Design](design.md) of these
 libraries that is detailed in a separate document.
 
-For a complete overview of the Integration Architecture Node (IA Node) project, please see the [Integration Architecture Documentation](https://github.com/National-Digital-Twin/integration-architecture-documentation)
+For a complete overview of the Integration Architecture Node (IA Node) project, please see the [Integration Architecture Documentation](https://github.com/National-Node-Net/integration-architecture-documentation)
 
 # Core Concepts
 These libraries are built around a number of core concepts which are used together to build up data processing
@@ -128,7 +128,7 @@ All of which is automated via a [`ProjectorDriver`](projection/driver.md).
 Every piece of the pipeline uses functionality, or interfaces, from these core libraries to build the overall pipeline.
 You can find more detailed documentation on this pipeline in [that repository][1].
 
-[1]: https://github.com/National-Digital-Twin/secure-agent-knowledge-search
+[1]: https://github.com/National-Node-Net/secure-agent-knowledge-search
 
 © Crown Copyright 2025. This work has been developed by the National Digital Twin Programme and is legally attributed to the Department for Business and Trade (UK) as the
 governing entity.

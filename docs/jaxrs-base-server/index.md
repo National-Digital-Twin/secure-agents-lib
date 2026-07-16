@@ -204,7 +204,7 @@ library falls back to using the JWT standard `sub` (subject) claim to detect a u
 ## User Attribute ABAC
 The User Attributes Service is part of Integration Architecture Node (IA Node)  and provides the ability to look-up the attributes for an
 authenticated user in order to then enforce Attribute Based Access Control (ABAC) upon a users requests.  [IA Node
-Access](https://github.com/National-Digital-Twin/ianode-access) is the default implementation of this service for IA Node.
+Access](https://github.com/National-Node-Net/ianode-access) is the default implementation of this service for IA Node.
 
 To use a User Attributes service you must set the `USER_ATTRIBUTES_URL` environment variable to the URL of the
 attributes service.  For example if you had deployed Access entirely locally it would be
@@ -407,8 +407,8 @@ pass into a service to configure it to use the mock server, see [User Attributes
 configuration details.
 
 [1]: https://datatracker.ietf.org/doc/html/rfc7807
-[2]: https://github.com/National-Digital-Twin/jwt-servlet-auth
-[3]: https://github.com/National-Digital-Twin/jwt-servlet-auth#verifiers
+[2]: https://github.com/National-Node-Net/jwt-servlet-auth
+[3]: https://github.com/National-Node-Net/jwt-servlet-auth#verifiers
 [4]: https://developer.mozilla.org/en-US/docs/Glossary/CORS-safelisted_request_header
 [5]: https://developer.mozilla.org/en-US/docs/Glossary/CORS-safelisted_response_header
 

@@ -43,7 +43,7 @@
     <packaging>pom</packaging>
     <name>IANode Secure Agents - Parent</name>
     <description>Provides common libraries for building Java based Secure Agents for the IANode platform</description>
-    <url>https://github.com/National-Digital-Twin/secure-agents-lib</url>
+    <url>https://github.com/National-Node-Net/secure-agents-lib</url>
 
     <developers>
         <developer>
@@ -64,9 +64,9 @@
     </licenses>
 
     <scm>
-        <connection>scm:git:https://github.com/National-Digital-Twin/secure-agents-lib</connection>
-        <developerConnection>scm:git:ssh://git@github.com/National-Digital-Twin/secure-agents-lib</developerConnection>
-        <url>https://github.com/National-Digital-Twin/secure-agents-lib</url>
+        <connection>scm:git:https://github.com/National-Node-Net/secure-agents-lib</connection>
+        <developerConnection>scm:git:ssh://git@github.com/National-Node-Net/secure-agents-lib</developerConnection>
+        <url>https://github.com/National-Node-Net/secure-agents-lib</url>
         <tag>HEAD</tag>
     </scm>
 
@@ -74,12 +74,12 @@
         <snapshotRepository>
             <id>github</id>
             <name>GitHub Packages</name>
-            <url>https://maven.pkg.github.com/National-Digital-Twin/secure-agents-lib</url>
+            <url>https://maven.pkg.github.com/National-Node-Net/secure-agents-lib</url>
         </snapshotRepository>
         <repository>
             <id>github</id>
             <name>GitHub Packages</name>
-            <url>https://maven.pkg.github.com/National-Digital-Twin/secure-agents-lib</url>
+            <url>https://maven.pkg.github.com/National-Node-Net/secure-agents-lib</url>
         </repository>
     </distributionManagement>
     <properties>
@@ -787,7 +787,7 @@
     <repositories>
         <repository>
             <id>github</id>
-            <url>https://maven.pkg.github.com/National-Digital-Twin/*</url>
+            <url>https://maven.pkg.github.com/National-Node-Net/*</url>
             <releases>
                 <enabled>true</enabled>
             </releases>
