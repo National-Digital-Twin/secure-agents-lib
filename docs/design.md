@@ -120,7 +120,7 @@ form of [Directed Acyclic Graph (DAG)][3], that we simply don't need currently. 
 Also, there is the key design assumption of Integration Architecture Node  to consider, that its topics are a continuous stream of changes that needs to be processed in-order. The distributed processing, of the kind offered by these frameworks, does not hold any obvious benefit for us because in distributing the workload you'd either have out-of-order processing of events, or sufficient coordination overheads to offset the benefits. It should be noted that Kafka Consumer Groups already gives us the capability to scale up to multiple instances of a Secure Agents if necessary. However, even then we would have work to do to ensure in-order processing of events across multiple instances of a Secure Agents.
 
 
-[1]: https://github.com/National-Digital-Twin/map-lib
+[1]: https://github.com/National-Node-Net/map-lib
 
 [2]: https://kafka.apache.org/documentation/streams/
 
