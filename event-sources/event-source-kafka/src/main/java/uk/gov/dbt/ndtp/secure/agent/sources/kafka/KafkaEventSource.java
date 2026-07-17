@@ -320,7 +320,7 @@ public class KafkaEventSource<TKey, TValue>
      * Processes any delayed offset commits i.e. offset commits that happened on a different thread to the one that is
      * calling {@link #poll(Duration)} and thus effectively owns the underlying {@link KafkaConsumer}.  This is
      * necessary because a {@link KafkaConsumer} isn't thread-safe as demonstrated by <a
-     * href="https://github.com/National-Digital-Twin/secure-agents-lib/issues/135">Issue 135</a>
+     * href="https://github.com/National-Node-Net/secure-agents-lib/issues/135">Issue 135</a>
      */
     private void processDelayedCommits() {
         if (!this.delayedOffsetCommits.isEmpty()) {
